@@ -2,29 +2,29 @@ pipeline{
     agent any
     stages{
         stage('checkout'){
-            steps(
+            steps {
                 checkout scm
-            )
+            }
         }
         stage('Install Dependencies'){
-            steps(
+            steps{
                 sh 'npm install'
-            )
+            }
         }
         stage('Build'){
-            steps(
+            steps{
                 sh 'npm run build'
-            )
+            }
         }
         stage('Test'){
-            steps(
+            steps{
                 sh 'npm test'
-            )
+            }
         }
         stage('Deploy'){
-            steps(
+            steps{
                 sh 'npm run deploy'
-            )
+            }
         }
     }
     post{
