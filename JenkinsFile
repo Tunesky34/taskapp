@@ -1,9 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage(Git Clone){
+        stage(checkout code){
             steps(
-                git 'url: 'https://github.com/Tunesky34/taskapp.git'
+                checkout scm
             )
         }
         stage(Install Dependencies){
