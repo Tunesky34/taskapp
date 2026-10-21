@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    Environment {
+        Build_Number = 1.0.0
+    }
+    stages{
+        stage(Git Clone){
+            steps(
+                git branch 'main' url: 'https://github.com/Tunesky34/taskapp.git'
+            )
+        }
+        stage(Install Dependencies){
+            steps(
+                sh 'npm install'
+            )
+        }
+        stage(Build){
+            steps(
+                sh 'npm run build'
+            )
+        }
+        stage(Test){
+            steps(
+                sh 'npm test'
+            )
+        }
+    }
+    Post{
+        success{
+            echo 'This will run only if successful'
+        }
+        failure{
+            echo 'This will run only if failed'
+        }
+    }
+}
