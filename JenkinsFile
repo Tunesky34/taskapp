@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage(Git Clone){
             steps(
-                git branch 'main' url: 'https://github.com/Tunesky34/taskapp.git'
+                git 'url: 'https://github.com/Tunesky34/taskapp.git'
             )
         }
         stage(Install Dependencies){
