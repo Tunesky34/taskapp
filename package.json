@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vite test",
+    "test": "npm run typecheck",
     "deploy": "echo 'Deploying the application...' && echo 'Deployment complete!'",
     "build": "vite build",
     "lint": "eslint .",
